@@ -4,10 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -19,8 +16,14 @@ public class User {
     @Id
     @GeneratedValue
     private Long id;
-    private String username;
     private String name;
     private String password;
+    @Column(unique = true)
     private String email;
+
+    public User(RegisterForm registerForm) {
+        this.name = registerForm.getName();
+        this.email = registerForm.getEmail();
+        this.password = registerForm.getPassword();
+    }
 }
