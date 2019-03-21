@@ -1,8 +1,8 @@
 package hu.codecool.advanced.tipszmiksz.customExceptions;
 
-public class UserNotFoundException extends RuntimeException {
+public class EmailAlreadyExistException extends RuntimeException {
 
-    public UserNotFoundException(String exception) {
+    public EmailAlreadyExistException(String exception) {
         super(exception);
     }
 
