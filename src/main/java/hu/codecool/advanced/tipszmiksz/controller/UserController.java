@@ -47,7 +47,7 @@ public class UserController {
         }
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public String login(@RequestBody LoginForm loginForm){
         log.info("Login attempt with email: {}", loginForm.getEmail());
         User user = userRepository.getUserByEmail(loginForm.getEmail());
